@@ -7,11 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService  {
+public class UserService {
 
     @Autowired
-   UserRepository userRepository;
-   public void addUser(UserEntryDto userEntryDto)
+    UserRepository userRepository;
 
+    public void addUser(UserEntryDto userEntryDto){
 
-}
+//        Creating the objects
+    UserEntity userEntity = UserEntity.builder().age(userEntryDto.getAge()).name(userEntryDto.getName()).address(userEntryDto.getAddress()).email(userEntryDto.getEmail()).mobNo(userEntryDto.getMobNo()).build();
+
+    userRepository.save(userEntity);
+   //This is to set all the attributes in one go
+      }
+       UserEntity convertEntryToDto()
+
+  }

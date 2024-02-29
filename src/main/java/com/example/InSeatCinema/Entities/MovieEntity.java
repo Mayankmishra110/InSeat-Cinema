@@ -32,6 +32,6 @@ public class MovieEntity {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
-
+//   @OneToMany
 
 }
