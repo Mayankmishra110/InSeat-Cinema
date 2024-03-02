@@ -4,11 +4,20 @@ package com.example.InSeatCinema.Entities;
 import com.example.InSeatCinema.Genres.Genre;
 import com.example.InSeatCinema.Genres.Language;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class MovieEntity {
 
 
@@ -32,6 +41,7 @@ public class MovieEntity {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
-//   @OneToMany
-
+    //this is a parent wrt to shows
+   @OneToMany(mappedBy = "movieEntity",cascade = CascadeType.ALL)
+   private List<ShowEntity> showEntityList = new ArrayList<>();
 }

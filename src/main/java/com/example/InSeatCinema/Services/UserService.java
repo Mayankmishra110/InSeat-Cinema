@@ -3,6 +3,7 @@ package com.example.InSeatCinema.Services;
 import com.example.InSeatCinema.Entities.UserEntity;
 import com.example.InSeatCinema.EntryDtos.UserEntryDto;
 import com.example.InSeatCinema.Repository.UserRepository;
+import com.example.InSeatCinema.convertors.UserConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,14 +13,13 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void addUser(UserEntryDto userEntryDto){
+    public String addUser(UserEntryDto userEntryDto)throws Exception{
 
-//        Creating the objects
-    UserEntity userEntity = UserEntity.builder().age(userEntryDto.getAge()).name(userEntryDto.getName()).address(userEntryDto.getAddress()).email(userEntryDto.getEmail()).mobNo(userEntryDto.getMobNo()).build();
+      UserEntity userEntity = UserConvertor.convertDtoToEntity(userEntryDto);
 
-    userRepository.save(userEntity);
-   //This is to set all the attributes in one go
-      }
-       UserEntity convertEntryToDto()
+      userRepository.save(userEntity);
+      
 
-  }
+    }
+
+}
