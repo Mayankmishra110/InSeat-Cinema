@@ -17,7 +17,7 @@ public class MovieController {
 
     @Autowired
     MovieService movieService;
-    @PostMapping("/add")
+
     public ResponseEntity<String> addMovie(@RequestBody MovieEntryDto movieEntryDto){
 
 

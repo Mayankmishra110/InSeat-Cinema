@@ -14,7 +14,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class ShowSeatEntity {
 
- @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
