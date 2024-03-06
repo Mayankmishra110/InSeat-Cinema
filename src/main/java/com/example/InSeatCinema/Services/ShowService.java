@@ -50,10 +50,17 @@ public class ShowService {
          movieRepository.save(movieEntity);
 
          List<ShowEntity> showEntityList1 = theaterEntity.getShowEntityList();
+
          showEntityList1.add(showEntity);
+
          theaterEntity.setShowEntityList(showEntityList);
 
+
+
+         movieRepository.save(movieEntity);
+
          theaterRepository.save(theaterEntity);
+
          return "The show has been added succesfully";
     }
 
