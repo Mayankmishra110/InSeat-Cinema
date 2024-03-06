@@ -1,6 +1,8 @@
 package com.example.InSeatCinema.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +14,8 @@ import java.util.UUID;
 @Table(name="tickets")
 @Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class TicketEntity {
 
    @Id
@@ -28,9 +32,11 @@ public class TicketEntity {
 
     private String theatername;
 
+    private String bookedSeats;
+
     private String ticketId = UUID.randomUUID().toString();
 
-    private String theaterName;
+
 
     @JoinColumn
     @ManyToOne

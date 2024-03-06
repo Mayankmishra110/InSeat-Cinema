@@ -62,7 +62,7 @@ public class ShowService {
 
         TheaterEntity theaterEntity = showEntity.getTheaterEntity();
 
-        List<TheaterSeatEntity> theaterSeatEntityList theaterEntity.getTheaterSeatEntityList();
+        List<TheaterSeatEntity> theaterSeatEntityList = theaterEntity.getTheaterSeatEntityList();
 
         List<ShowSeatEntity> seatEntityList = new ArrayList<>();
 
