@@ -1,4 +1,4 @@
-# Book My Show
+# InSeat-Cinema
 
 ## Table of contents
 
